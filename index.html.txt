@@ -1,0 +1,89 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>NOVA App</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="app">
+    <header>
+      <h1>NOVA Mining dApp</h1>
+      <nav>
+        <button onclick="showTab('miningTab')">Mining</button>
+        <button onclick="showTab('swapTab')">Swap</button>
+        <button onclick="showTab('mintTab')">Mint</button>
+        <button onclick="showTab('bridgeTab')">Bridge</button>
+        <button onclick="showTab('profileTab')">Profile</button>
+      </nav>
+    </header>
+
+    <!-- Mining Tab -->
+    <div id="miningTab" class="tab-content">
+      <h2>Mine NOVA</h2>
+      <p>Rate: 0.01 NOVA/min</p>
+      <button id="startMiningBtn">Start Mining</button>
+      <p>Polygon NOVA: <span id="novaBalance">0.0000</span></p>
+    </div>
+
+    <!-- Swap Tab -->
+    <div id="swapTab" class="tab-content" style="display:none;">
+      <h2>Swap NOVA → SPACE</h2>
+      <p>Polygon NOVA: <span id="novaBalanceSwap">0.0000</span></p>
+      <input type="number" id="swapAmount" placeholder="Amount" />
+      <button id="swapBtn">Swap</button>
+      <p>SPACE: <span id="spaceBalanceSwap">0.0000</span></p>
+    </div>
+
+    <!-- Mint Tab -->
+    <div id="mintTab" class="tab-content" style="display:none;">
+      <h2>Mint NOVA → NV</h2>
+      <p>Polygon NOVA: <span id="novaBalanceMint">0.0000</span></p>
+      <input type="number" id="mintAmount" placeholder="Amount" />
+      <button onclick="mintNV()">Mint</button>
+      <p>NV Balance: <span id="nvBalance">0.0000</span></p>
+    </div>
+
+    <!-- Bridge Tab -->
+    <div id="bridgeTab" class="tab-content" style="display:none;">
+      <h2>Bridge NOVA</h2>
+      <label>From:</label>
+      <select id="fromChain">
+        <option value="novaPolygon">Polygon</option>
+        <option value="novaBNB">BNB</option>
+        <option value="novaETH">ETH</option>
+      </select>
+      <label>To:</label>
+      <select id="toChain">
+        <option value="novaBNB">BNB</option>
+        <option value="novaPolygon">Polygon</option>
+        <option value="novaETH">ETH</option>
+      </select>
+      <input type="number" id="bridgeAmount" placeholder="Amount" />
+      <button onclick="bridgeTokens()">Bridge</button>
+      <div id="bridgeStatus"></div>
+      <p>Polygon NOVA: <span id="novaPolygon">0.0000</span></p>
+      <p>BNB NOVA: <span id="novaBNB">0.0000</span></p>
+      <p>ETH NOVA: <span id="novaETH">0.0000</span></p>
+    </div>
+
+    <!-- Profile Tab -->
+    <div id="profileTab" class="tab-content" style="display:none;">
+      <h2>Your Profile</h2>
+      <input type="text" id="userNameInput" placeholder="Enter name" />
+      <button onclick="saveName()">Save Name</button>
+      <p>Name: <span id="profileName">Not Set</span></p>
+      <p>Polygon NOVA: <span id="novaBalanceProfile">0.0000</span></p>
+      <p>BNB NOVA: <span id="novaBNBProfile">0.0000</span></p>
+      <p>ETH NOVA: <span id="novaETHProfile">0.0000</span></p>
+      <p>SPACE: <span id="spaceBalanceProfile">0.0000</span></p>
+      <p>NV: <span id="nvBalanceProfile">0.0000</span></p>
+      <p>Total Balance: <span id="totalBalance">0.0000</span></p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
