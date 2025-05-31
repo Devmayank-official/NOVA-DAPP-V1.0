@@ -54,7 +54,7 @@ script.js // Core logic: mining, swap, mint, bridge, UI
 ---
 
 ## 👨‍💻 Created By
-**Mayank** (devmaynk-official) — 16 y/o Dev from India  
+**Mayank** — 16 y/o Dev from India  
 ⚡ Building futuristic dApps, AI tools, and terminal simulations  
 🧠 Powered by Radha Rani’s blessings 🌼  
 📧 Email: `devmayank.inbox@gmail.com`  
